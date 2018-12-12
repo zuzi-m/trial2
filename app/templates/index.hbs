@@ -1,0 +1,8 @@
+{{form-material onCreateAction=(action "createMaterial")}}
+<hr>
+{{calculator-uvalue
+  materials=model
+  outsideSurface=0.04
+  insideSurface=0.13
+  onDeleteAction=(action "deleteMaterial")
+}}

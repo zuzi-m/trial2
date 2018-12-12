@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Add Material Form</h2>
+
+  <div>
+    <label>Material Name</label><br>
+    {{input id="name" name="name" type="text" value=model.name}}
+  </div>
+  <div>
+    <label>Thickness</label><br>
+    {{input
+      id="thickness"
+      name="thickness"
+      type="number"
+      value=model.thickness
+      min="0"
+    }}
+  </div>
+  <div>
+    <label>K-Value</label><br>
+    {{input
+      id="kvalue"
+      name="kvalue"
+      type="number"
+      value=model.kvalue
+      min="0"
+    }}
+  </div>
+
+  <div>
+    <button {{action "createMaterial"}} disabled={{saveDisabled}}>Add Material</button>
+  </div>
+</div>

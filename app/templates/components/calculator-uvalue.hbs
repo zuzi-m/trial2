@@ -1,0 +1,61 @@
+<div class="container">
+  <table class="table-full">
+
+    <thead>
+      <tr>
+        <th colspan="5">U-Value Calculator</th>
+      </tr>
+      <tr>
+        <th>Material Name</th>
+        <th>Thickness, m</th>
+        <th>K-Value</th>
+        <th>Resistivity, K m<sup>2</sup>/W</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Outside Surface</td>
+        <td class="text-right">-</td>
+        <td class="text-right">-</td>
+        <td class="text-right">{{number-formatter value=outsideSurface precision=3}}</td>
+        <td class="text-center">-</td>
+      </tr>
+
+      {{#if materials}}
+        {{#each materials as |material|}}
+          <tr>
+            <td>{{material.name}}</td>
+            <td class="text-right">{{number-formatter value=material.thickness precision=3}}</td>
+            <td class="text-right">{{number-formatter value=material.kvalue precision=3}}</td>
+            <td class="text-right">{{number-formatter value=material.resistivity precision=3}}</td>
+            <td class="text-center"><button {{action "deleteMaterial" material}}>Delete</button></td>
+          </tr>
+        {{/each}}
+      {{else}}
+        <tr><td colspan="5">Your materials list is empty. Add some first.</td></tr>
+      {{/if}}
+
+      <tr>
+        <td>Inner Surface</td>
+        <td class="text-right">-</td>
+        <td class="text-right">-</td>
+        <td class="text-right">{{number-formatter value=insideSurface precision=3}}</td>
+        <td class="text-center">-</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="3">Total</td>
+        <td class="text-right">{{number-formatter value=totalResistivity precision=3}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="4">U-Value = 1&nbsp;/&nbsp;{{totalResistivity}}</td>
+        <td>{{number-formatter value=uValue precision=3}}&nbsp;W/m<sup>2</sup>K</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
