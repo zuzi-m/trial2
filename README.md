@@ -2,7 +2,7 @@
 
 This app was done as an assignment. To test it, follow install and test
 instructions below. The code that implements the assignment is in
-[this commit](258a85b5cdfff4b005ca1479da76f43862de3b4a) and the one that
+[this commit](https://github.com/lollkosk/trial2/commit/258a85b5cdfff4b005ca1479da76f43862de3b4a) and the one that
 follows it.
 
 ## Prerequisites
