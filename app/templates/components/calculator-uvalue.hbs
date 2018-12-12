@@ -54,7 +54,11 @@
       </tr>
       <tr>
         <td colspan="4">U-Value = 1&nbsp;/&nbsp;{{totalResistivity}}</td>
-        <td>{{number-formatter value=uValue precision=3}}&nbsp;W/m<sup>2</sup>K</td>
+        <td>
+          {{#number-formatter value=uValue precision=3}}
+            W/m<sup>2</sup>K
+          {{/number-formatter}}
+        </td>
       </tr>
     </tfoot>
   </table>
